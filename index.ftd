@@ -1,0 +1,144 @@
+-- import: ftd-js/assets
+-- import: fifthtry.github.io/doc-site-typography as typo
+
+-- string $name: Anonymous
+
+-- todo-item list $todo_list:
+-- end: $todo_list
+
+-- ftd.column:
+padding.px: 40
+width: fill-container
+spacing.fixed.px: 40
+
+-- ftd.column:
+padding.px: 20
+width: fill-container
+background.solid: #dae6f0
+align-content: center
+
+-- ftd.text: Guess, which world am I from?
+role: $typo.types.heading-small
+
+-- ftd.row:
+margin-top.px: 40
+spacing.fixed.px: 5
+role: $typo.types.heading-large
+
+-- ftd.text: Hey,
+
+-- ftd.text: $name
+color: green
+
+-- end: ftd.row
+
+
+
+-- ftd.row:
+margin-vertical.px: 40
+spacing.fixed.px: 10
+role: $typo.types.heading-medium
+align-content: center
+
+-- ftd.text: Name:
+
+-- ftd.text-input:
+placeholder: Your name here...
+type: url
+height.fixed.px: 30
+width.fixed.px: 213
+padding.px: 10
+border-width.px: 2
+$on-change$: $ftd.set-string($a = $name, v = $VALUE)
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 40
+
+-- ftd.column:
+width.fixed.percent: 50
+
+-- todo-list-display:
+name: $name
+$todo_list: $todo_list
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 50
+padding.px: 20
+background.solid: #dae6f0
+spacing.fixed.px: 10
+padding-bottom.px: 68
+
+-- ftd.text: FTD World!!
+role: $typo.types.heading-medium
+
+-- ftd.column:
+min-height.fixed.px: 256
+background.solid: white
+padding.px: 32
+width: fill-container
+spacing.fixed.px: 10
+
+-- ftd-todo-display:
+item: $obj
+$loop$: $todo_list as $obj
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+-- end: ftd.column
+
+
+
+
+
+
+
+
+-- web-component todo-list-display:
+string name:
+todo-item list $todo_list:
+js: $assets.files.todo.js
+
+
+
+
+-- record todo-item:
+caption name:
+boolean done:
+string status:
+optional body description:
+
+
+
+
+-- component ftd-todo-display:
+todo-item item:
+
+-- ftd.row:
+width: fill-container
+spacing: space-between
+background.solid: #b8dbfb
+padding-horizontal.px: 5
+
+-- ftd.text: $ftd-todo-display.item.name
+role: $typo.types.heading-medium
+
+-- ftd.text: $ftd-todo-display.item.status
+role: $typo.types.heading-small
+color: blue
+align-self: center
+
+-- end: ftd.row
+
+-- end: ftd-todo-display
