@@ -179,29 +179,3 @@ function todo_item_display(obj, index, data, todo_list) {
 
     return todo;
 }
-
-function clear() {
-    if (!!window.dummy_data_main && !!window.dummy_data_main["ftd-js/#todo_list"]) {
-        let data = window.ftd.data["main"];
-        let length = window.resolve_reference("ftd-js/#todo_list", data).length;
-        let [_, data_id, start_index] = window.dummy_data_main["ftd-js/#todo_list"](data);
-        let main = document.querySelector(`[data-id="${data_id}"]`);
-        for (var i = length - 1 + start_index; i >= start_index; i--) {
-            main.removeChild(main.children[i]);
-        }
-    }
-}
-
-function set() {
-    if (!!window.dummy_data_main && !!window.dummy_data_main["ftd-js/#todo_list"]) {
-        let data = window.ftd.data["main"];
-        let [htmls, data_id, start_index] = window.dummy_data_main["ftd-js/#todo_list"](data);
-        for (let i in htmls) {
-            let nodes = stringToHTML(htmls[i]);
-            let main = document.querySelector(`[data-id="${data_id}"]`);
-            let g = main.children.length;
-            let h = start_index + parseInt(i);
-            main.insertBefore(nodes.children[0], main.children[start_index + parseInt(i)]);
-        }
-    }
-}
