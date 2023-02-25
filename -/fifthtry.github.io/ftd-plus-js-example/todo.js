@@ -170,7 +170,7 @@ class Todo extends HTMLElement {
 
         page.appendChild(heading);
         page.appendChild(wrapper);
-        page.appendChild(button);
+        //page.appendChild(button);
 
         shadow.appendChild(page);
         this.setAttribute("style", "width: 100%");
