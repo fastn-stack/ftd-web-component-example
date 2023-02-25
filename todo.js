@@ -27,7 +27,7 @@ class Todo extends HTMLElement {
 
         const heading = document.createElement('div');
         heading.setAttribute('class', 'heading');
-        heading.innerText = "Web Component World"
+        heading.innerText = "JS World"
 
         // Create spans
         const wrapper = document.createElement('div');
