@@ -1,12 +1,10 @@
-// Create a class for the element
 class Todo extends HTMLElement {
     constructor() {
-        // Always call super first in constructor
+        super(); // Always call super first in constructor
 
-        super();
-
-        
+        // get access to arguments passed to this component
         let data = window.ftd.component_data(this);
+
         let todo_list = [];
 
         data.name.on_change = function () {

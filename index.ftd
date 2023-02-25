@@ -13,6 +13,7 @@
 
 
 -- component demo:
+boolean show-link: true
 
 -- ftd.column:
 width: fill-container
@@ -29,7 +30,7 @@ width: fill-container
 background.solid: #dae6f0
 align-content: center
 
--- ftd.text: Guess, which world am I from?
+-- ftd.text: Web Component Demo
 role: $typo.types.copy-large
 text-align: center
 
@@ -73,13 +74,14 @@ value: $task
 align-content: center
 spacing.fixed.px: 5
 align-self: center
+if: { demo.show-link }
 
--- ftd.text: Liking FTD? See
+-- ftd.text: Checkout out our
 role: $inherited.types.copy-regular
 
--- ftd.text: Source code
+-- ftd.text: blog post to learn more
 role: $inherited.types.copy-regular
-link: https://github.com/fifthtry/ftd-plus-js-example/
+link: https://fastn.io/blog/web-components/
 
 -- end: ftd.row
 
