@@ -7,8 +7,8 @@ class Todo extends HTMLElement {
 
         let todo_list = [];
 
-        data.name.on_change = function () {
-            const text_name = this.get();
+        data.name.on_change(function () {
+            const text_name = data.name.get();
             let obj = {"name": text_name, "done": true, "status": "Todo", "description": null};
             todo_list.push(obj);
             let index = todo_list.length -1;
@@ -17,7 +17,7 @@ class Todo extends HTMLElement {
             data.todo_list.set(todo_list);
 
             wrapper.appendChild(todo);
-        }
+        });
 
         // Create a shadow root
         const shadow = this.attachShadow({mode: 'open'});
