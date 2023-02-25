@@ -81,7 +81,7 @@ width.fixed.percent if { ftd.device == "mobile" }: 100
 padding.px: 20
 background.solid: #dae6f0
 spacing.fixed.px: 10
-padding-bottom.px: 68
+padding-bottom.px: 20
 
 -- ftd.text: FTD World!!
 if: { ftd.device != "mobile"}
