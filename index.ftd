@@ -1,7 +1,7 @@
 -- import: fifthtry.github.io/ftd-plus-js-example/assets
 -- import: fifthtry.github.io/doc-site-typography as typo
 
--- string $name: Anonymous
+-- optional string $name: 
 
 -- todo-item list $todo_list:
 -- end: $todo_list
@@ -25,17 +25,17 @@ align-content: center
 -- ftd.text: Guess, which world am I from?
 role: $typo.types.heading-small
 
--- ftd.row:
-margin-top.px: 40
-spacing.fixed.px: 5
-role: $typo.types.heading-medium
+;;-- ftd.row:
+;;margin-top.px: 40
+;;spacing.fixed.px: 5
+;;role: $typo.types.heading-medium
 
--- ftd.text: Hey,
+;;-- ftd.text: Hey,
 
--- ftd.text: $name
-color: green
+;;-- ftd.text: $name
+;;color: green
 
--- end: ftd.row
+;;-- end: ftd.row
 
 
 -- ftd.row:
@@ -55,6 +55,7 @@ padding.px: 10
 border-width.px: 2
 $on-change$: $ftd.set-string($a = $name, v = $VALUE)
 role: $inherited.types.copy-regular
+value: $name
 
 -- end: ftd.row
 
