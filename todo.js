@@ -2,8 +2,10 @@
 class Todo extends HTMLElement {
     constructor() {
         // Always call super first in constructor
+
         super();
 
+        
         let data = window.ftd.component_data(this);
         let todo_list = [];
 
@@ -52,18 +54,20 @@ class Todo extends HTMLElement {
         console.log(style.isConnected);
 
         style.textContent = `
+        .parent-wrap {
+            width: 100%;
+        }
         .page {
-            width: 500px;
             background-color: #dae6f0;
             display: flex;
             flex-direction: column;
             gap: 10px;
             padding: 20px;
         }
-        
         .heading {
-            font-size: 33px;
-            font-weight: bold;
+            font-size: 32px;
+            font-weight: 600;
+            font-family: fifthtry-github-io-inter-font-Inter;
         }
         
       .wrapper {
@@ -72,7 +76,7 @@ class Todo extends HTMLElement {
             flex-direction: column;
             min-height: 200px;
             background-color: white;
-            padding: 32px;
+            padding: 20px;
       }
       
       .todo-item {
@@ -114,6 +118,50 @@ class Todo extends HTMLElement {
       .icon:hover + .info, .icon:focus + .info {
         opacity: 1;
       }
+      .todo-done {
+        background-color: #aff5af;
+        color: darkgreen;
+        display: flex;
+        font-family: fifthtry-github-io-inter-font-Inter;
+        font-size: 18px;
+        font-weight: 700;
+        gap: 18px;
+      }
+      .todo-added {
+        background-color: yellow;
+        color: #bb7d0c;
+        display: flex;
+        font-family: fifthtry-github-io-inter-font-Inter;
+        font-size: 18px;
+        font-weight: 700;
+        gap: 18px;
+      }
+      @media (max-width: 500px) {
+            .page {
+                background-color: #dae6f0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+            }
+            .heading {
+                font-family: fifthtry-github-io-inter-font-Inter;
+                font-size: 24px;
+                line-height: 36px;
+                font-weight: 500;
+                overflow: hidden;
+                width: 100%;
+                max-width: 270px;
+            }
+            .wrapper {
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                min-height: 200px;
+                background-color: white;
+                padding: 12px;
+            }
+        }
     `;
 
         // Attach the created elements to the shadow dom
@@ -125,6 +173,7 @@ class Todo extends HTMLElement {
         page.appendChild(button);
 
         shadow.appendChild(page);
+        this.setAttribute("style", "width: 100%");
     }
 }
 
@@ -135,7 +184,6 @@ customElements.define('todo-list-display', Todo);
 
 function todo_item_display(obj, index, data, todo_list) {
     const todo = document.createElement('div');
-    todo.setAttribute('class', 'todo-item');
     todo.setAttribute('tabindex', 0);
     todo.setAttribute('id', index.toString());
 
@@ -145,12 +193,10 @@ function todo_item_display(obj, index, data, todo_list) {
     check.value = obj.name + '<br/>';
     check.onclick = function (event) {
         if (check.checked) {
-            todo.style.backgroundColor = "#aff5af";
-            text.style.color = "darkgreen";
+            todo.setAttribute("class", "todo-done");
             obj.status = "Done";
         } else {
-            todo.style.backgroundColor = "yellow";
-            text.style.color = "#bb7d0c";
+            todo.setAttribute("class", "todo-added");
             obj.status = "Todo";
         }
         obj.done = check.checked;
@@ -161,11 +207,9 @@ function todo_item_display(obj, index, data, todo_list) {
     text.innerText = obj.name
 
     if (check.checked) {
-        todo.style.backgroundColor = "green";
-        text.style.color = "darkgreen";
+        todo.setAttribute("class", "todo-done");
     } else {
-        todo.style.backgroundColor = "yellow";
-        text.style.color = "#bb7d0c";
+        todo.setAttribute("class", "todo-added");
     }
 
     const input = document.createElement('input');

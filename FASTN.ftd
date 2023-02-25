@@ -2,4 +2,14 @@
 
 -- fastn.package: fifthtry.github.io/ftd-plus-js-example
 
+
+-- fastn.dependency: fifthtry.github.io/doc-site as ds
+
 -- fastn.dependency: fifthtry.github.io/doc-site-typography
+
+-- fastn.dependency: fifthtry.github.io/dark-flame-cs as cs
+
+
+-- fastn.auto-import: ds
+
+-- fastn.auto-import: cs

@@ -6,8 +6,13 @@
 -- todo-item list $todo_list:
 -- end: $todo_list
 
+
 -- ftd.column:
-padding.px: 40
+width: fill-container
+padding.px if { ftd.device != "mobile" }: 40
+padding.px if { ftd.device == "mobile" }: 20
+
+-- ftd.column:
 width: fill-container
 spacing.fixed.px: 40
 
@@ -23,7 +28,7 @@ role: $typo.types.heading-small
 -- ftd.row:
 margin-top.px: 40
 spacing.fixed.px: 5
-role: $typo.types.heading-large
+role: $typo.types.heading-medium
 
 -- ftd.text: Hey,
 
@@ -31,7 +36,6 @@ role: $typo.types.heading-large
 color: green
 
 -- end: ftd.row
-
 
 
 -- ftd.row:
@@ -58,9 +62,11 @@ $on-change$: $ftd.set-string($a = $name, v = $VALUE)
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 40
+wrap if { ftd.device == "mobile" }: true
 
 -- ftd.column:
 width.fixed.percent: 50
+width.fixed.percent if { ftd.device == "mobile" }: 100
 
 -- todo-list-display:
 name: $name
@@ -70,18 +76,24 @@ $todo_list: $todo_list
 
 -- ftd.column:
 width.fixed.percent: 50
+width.fixed.percent if { ftd.device == "mobile" }: 100
 padding.px: 20
 background.solid: #dae6f0
 spacing.fixed.px: 10
 padding-bottom.px: 68
 
 -- ftd.text: FTD World!!
+if: { ftd.device != "mobile"}
 role: $typo.types.heading-medium
 
+-- ftd.text: FTD World!!
+if: { ftd.device == "mobile"}
+role: $typo.types.heading-small
+
 -- ftd.column:
-min-height.fixed.px: 256
+min-height.fixed.px: 234
 background.solid: white
-padding.px: 32
+padding.px: 20
 width: fill-container
 spacing.fixed.px: 10
 
@@ -95,10 +107,9 @@ $loop$: $todo_list as $obj
 
 -- end: ftd.row
 
-
 -- end: ftd.column
 
-
+-- end: ftd.column
 
 
 
@@ -132,13 +143,15 @@ background.solid: #b8dbfb
 padding-horizontal.px: 5
 
 -- ftd.text: $ftd-todo-display.item.name
-role: $typo.types.heading-medium
+role: $typo.types.button-large
 
 -- ftd.text: $ftd-todo-display.item.status
-role: $typo.types.heading-small
+role: $typo.types.button-large
 color: blue
 align-self: center
 
 -- end: ftd.row
 
 -- end: ftd-todo-display
+
+
