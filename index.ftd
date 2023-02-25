@@ -25,17 +25,16 @@ align-content: center
 -- ftd.text: Guess, which world am I from?
 role: $typo.types.heading-small
 
--- ftd.row:
-margin-top.px: 40
-spacing.fixed.px: 5
-role: $typo.types.heading-medium
+;;-- ftd.row:
+;;margin-top.px: 40
+;;spacing.fixed.px: 5
+;;role: $typo.types.heading-medium
 
--- ftd.text: Hey,
+;;-- ftd.text: Hey,
+;;-- ftd.text: $name
+;;color: green
 
--- ftd.text: $name
-color: green
-
--- end: ftd.row
+;;-- end: ftd.row
 
 
 -- ftd.row:
@@ -44,10 +43,10 @@ spacing.fixed.px: 10
 role: $typo.types.heading-medium
 align-content: center
 
--- ftd.text: Name:
+-- ftd.text: Task:
 
 -- ftd.text-input:
-placeholder: Your name here...
+placeholder: Your task here...
 type: url
 height.fixed.px: 30
 width.fixed.px: 213
@@ -83,11 +82,11 @@ background.solid: #dae6f0
 spacing.fixed.px: 10
 padding-bottom.px: 20
 
--- ftd.text: FTD World!!
+-- ftd.text: FTD World
 if: { ftd.device != "mobile"}
 role: $typo.types.heading-medium
 
--- ftd.text: FTD World!!
+-- ftd.text: FTD World
 if: { ftd.device == "mobile"}
 role: $typo.types.heading-small
 
