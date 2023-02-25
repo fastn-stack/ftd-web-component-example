@@ -4,6 +4,7 @@
 -- optional string $task: 
 
 -- todo-item list $todo_list:
+
 -- end: $todo_list
 
 
@@ -23,7 +24,8 @@ background.solid: #dae6f0
 align-content: center
 
 -- ftd.text: Guess, which world am I from?
-role: $typo.types.heading-small
+role: $typo.types.copy-large
+text-align: center
 
 ;;-- ftd.row:
 ;;margin-top.px: 40
@@ -45,6 +47,7 @@ role: $typo.types.heading-medium
 align-content: center
 
 -- ftd.text: Task:
+role: $typo.types.button-large
 
 -- ftd.text-input:
 placeholder: Your task here...
@@ -99,11 +102,11 @@ background.solid: #dae6f0
 spacing.fixed.px: 10
 padding-bottom.px: 20
 
--- ftd.text: FTD World!!
+-- ftd.text: FTD World
 if: { ftd.device != "mobile"}
 role: $typo.types.heading-medium
 
--- ftd.text: FTD World!!
+-- ftd.text: FTD World
 if: { ftd.device == "mobile"}
 role: $typo.types.heading-small
 
