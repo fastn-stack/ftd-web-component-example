@@ -29,7 +29,7 @@ class Todo extends HTMLElement {
 
         const heading = document.createElement('div');
         heading.setAttribute('class', 'heading');
-        heading.innerText = "Web Component World!!"
+        heading.innerText = "Web Component World"
 
         // Create spans
         const wrapper = document.createElement('div');
@@ -151,7 +151,6 @@ class Todo extends HTMLElement {
                 font-weight: 500;
                 overflow: hidden;
                 width: 100%;
-                max-width: 270px;
             }
             .wrapper {
                 gap: 10px;
