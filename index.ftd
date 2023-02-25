@@ -25,16 +25,17 @@ align-content: center
 -- ftd.text: Guess, which world am I from?
 role: $typo.types.heading-small
 
-;;-- ftd.row:
-;;margin-top.px: 40
-;;spacing.fixed.px: 5
-;;role: $typo.types.heading-medium
+-- ftd.row:
+margin-top.px: 40
+spacing.fixed.px: 5
+role: $typo.types.heading-medium
 
-;;-- ftd.text: Hey,
-;;-- ftd.text: $name
-;;color: green
+-- ftd.text: Hey,
 
-;;-- end: ftd.row
+-- ftd.text: $name
+color: green
+
+-- end: ftd.row
 
 
 -- ftd.row:
@@ -82,11 +83,11 @@ background.solid: #dae6f0
 spacing.fixed.px: 10
 padding-bottom.px: 20
 
--- ftd.text: FTD World
+-- ftd.text: FTD World!!
 if: { ftd.device != "mobile"}
 role: $typo.types.heading-medium
 
--- ftd.text: FTD World
+-- ftd.text: FTD World!!
 if: { ftd.device == "mobile"}
 role: $typo.types.heading-small
 
