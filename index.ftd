@@ -54,6 +54,7 @@ width.fixed.px: 213
 padding.px: 10
 border-width.px: 2
 $on-change$: $ftd.set-string($a = $name, v = $VALUE)
+role: $inherited.types.copy-regular
 
 -- end: ftd.row
 
