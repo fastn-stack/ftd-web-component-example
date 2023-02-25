@@ -1,4 +1,4 @@
--- import: fifthtry.github.io/ftd-plus-js-example/assets
+-- import: fastn-stack.github.io/ftd-web-component-example/assets
 -- import: fifthtry.github.io/doc-site-typography as typo
 
 -- optional string $task: 
@@ -7,6 +7,12 @@
 
 -- end: $todo_list
 
+
+-- demo:
+
+
+
+-- component demo:
 
 -- ftd.column:
 width: fill-container
@@ -131,7 +137,7 @@ $loop$: $todo_list as $obj
 
 -- end: ftd.column
 
-
+-- end: demo
 
 
 
