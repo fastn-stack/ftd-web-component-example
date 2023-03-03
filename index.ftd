@@ -171,6 +171,7 @@ link: https://fastn.io/blog/web-components/
 -- component header:
 boolean show-link: false
 boolean $mouse-in: false
+optional string $input-value:
 
 -- ftd.column:
 padding.px: 20
@@ -200,6 +201,7 @@ padding.px: 10
 border-width.px: 2
 role: $inherited.types.copy-regular
 value: $task
+$on-input$: $ftd.set-string($a = $header.input-value, v = $VALUE)
 
 
 -- ftd.text: Create
@@ -208,7 +210,7 @@ padding-vertical.px: 6
 padding-horizontal.px: 10
 border-radius.px: 5
 background.solid if { header.mouse-in }: #92B4D2
-$on-click$: $ftd.set-string($a = $task, v = $VALUE)
+$on-click$: $ftd.set-string($a = $task, v = $header.input-value)
 $on-mouse-enter$: $ftd.set-bool($a = $header.mouse-in, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $header.mouse-in, v = false)
 
